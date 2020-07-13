@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Laureline",
+      "age": 24,
+      "validation": false
+    },
+    {
+      "id": 2,
+      "name": "Valerian",
+      "age": 27,
+      "validation": true
+    },
+    {
+      "id": 3,
+      "name": "Spirou",
+      "age": 32,
+      "validation": true
+    },
+    {
+      "id": 4,
+      "name": "Fantasio",
+      "age": 28,
+      "validation": false
+    }
+  ]
+}
