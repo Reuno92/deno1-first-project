@@ -2,7 +2,14 @@ import users from '../Data/data.ts';
 import {User} from '../Models/User.ts';
 
 export const getUsers = ({ response }: { response: any }) => {
-	response.body = users;
+	if (users.length >= 1) {
+		response.body = users;
+		response.status = 200;
+	} else {
+		response.body = 'Users not found';
+		response.status = 404;
+	}
+
 }
 
 export const getUser = async ({response, params}: {
@@ -10,6 +17,12 @@ export const getUser = async ({response, params}: {
 	params: any;
 }) => {
 	const user = await users.find((user: User) => user.id === +params.id);
-	response.body = user;
-	response.status = 200;
+	console.log(user);
+	if (user !== undefined) {
+		response.body = user;
+		response.status = 200;
+	} else {
+		response.body = "User don't exist";
+		response.status = 404;
+	}
 };
